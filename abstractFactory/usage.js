@@ -1,10 +1,10 @@
-var NotificationFactory = require('./notificationFactory').NotificationFactory;
+var emailFactory = require('./emailNotification');
+var smsFactory = require('./smsNotification');
+var whatsAppFactory = require('./whatsAppNotification');
 
-var factory = new NotificationFactory();
-
-var email = factory.notifyByEmail();
-var sms = factory.notifyBySms();
-var whats = factory.notifyByWhatsApp();
+var email = emailFactory();
+var sms = smsFactory();
+var whats = whatsAppFactory();
 
 
 email.sendMessage('message by email');

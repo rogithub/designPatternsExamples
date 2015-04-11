@@ -10,4 +10,7 @@ var EmailNotification = (function() {
     return EmailNotification;
 })();
 
-exports.EmailNotification = EmailNotification;
+module.exports = function() {
+    return new EmailNotification();
+}
+

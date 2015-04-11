@@ -11,4 +11,6 @@ var SmsNotification = (function() {
     return SmsNotification;
 })();
 
-exports.SmsNotification = SmsNotification;
+module.exports = function() {
+    return new SmsNotification();
+}

@@ -12,4 +12,6 @@ var WhatsAppNotification = (function() {
     
 })();
 
-exports.WhatsAppNotification = WhatsAppNotification;
+module.exports = function() {
+    return new WhatsAppNotification();
+}
