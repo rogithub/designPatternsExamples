@@ -5,25 +5,25 @@ var filtroGasolinaFactory = require('./filtroGasolina');
 var litroAceiteFactory = require('./litroAceite');
 
 var Afinacion4Cilindros = (function() {
-    var Afinacion4Cilindros = function() {
-        
+    var Afinacion4Cilindros = function(precios) {
+        this.precios = precios;
     };
     
     Afinacion4Cilindros.prototype.construir = function () {
         var afinacion = afinacionFactory();
         
-        afinacion.bujias.push(bujiaFactory(10));
-        afinacion.bujias.push(bujiaFactory(10));
-        afinacion.bujias.push(bujiaFactory(10));
-        afinacion.bujias.push(bujiaFactory(10));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
         
-        afinacion.filtrosAire.push(filtroAireFactory(50));
-        afinacion.filtrosGasolina.push(filtroGasolinaFactory(60));
+        afinacion.filtrosAire.push(filtroAireFactory(this.precios.filtroAire));
+        afinacion.filtrosGasolina.push(filtroGasolinaFactory(this.precios.filtroGasolina));
         
         
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
         
         return afinacion;
     }
@@ -31,6 +31,6 @@ var Afinacion4Cilindros = (function() {
     return Afinacion4Cilindros;
 })();
 
-module.exports = function() {
-    return new Afinacion4Cilindros();
+module.exports = function(precios) {
+    return new Afinacion4Cilindros(precios);
 }

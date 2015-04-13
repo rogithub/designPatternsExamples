@@ -5,28 +5,28 @@ var filtroGasolinaFactory = require('./filtroGasolina');
 var litroAceiteFactory = require('./litroAceite');
 
 var Afinacion6Cilindros = (function() {
-    var Afinacion6Cilindros = function() {
-        
+    var Afinacion6Cilindros = function(precios) {
+        this.precios = precios;
     };
     
     Afinacion6Cilindros.prototype.construir = function () {
         var afinacion = afinacionFactory();
         
-        afinacion.bujias.push(bujiaFactory(12));
-        afinacion.bujias.push(bujiaFactory(12));
-        afinacion.bujias.push(bujiaFactory(12));
-        afinacion.bujias.push(bujiaFactory(12));
-        afinacion.bujias.push(bujiaFactory(12));
-        afinacion.bujias.push(bujiaFactory(12));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
+        afinacion.bujias.push(bujiaFactory(this.precios.bujia));
         
-        afinacion.filtrosAire.push(filtroAireFactory(60));
-        afinacion.filtrosGasolina.push(filtroGasolinaFactory(70));
+        afinacion.filtrosAire.push(filtroAireFactory(this.precios.filtroAire));
+        afinacion.filtrosGasolina.push(filtroGasolinaFactory(this.precios.filtroGasolina));
         
         
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
-        afinacion.listrosAceite.push(litroAceiteFactory(18));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
+        afinacion.listrosAceite.push(litroAceiteFactory(this.precios.litroAceite));
         
         return afinacion;
     }
@@ -34,6 +34,6 @@ var Afinacion6Cilindros = (function() {
     return Afinacion6Cilindros;
 })();
 
-module.exports = function() {
-    return new Afinacion6Cilindros();
+module.exports = function(precios) {
+    return new Afinacion6Cilindros(precios);
 }
