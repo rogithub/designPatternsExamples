@@ -5,21 +5,21 @@ var afinacion8Factory = require('./afinacion8Cilindros');
 
 
 var tallerDeAbraham = tallerFactory();
-var estrategia4Cilindros = afinacion4Factory({
+var afinacion4cil = afinacion4Factory({
     bujia: 10,
     filtroAire: 12,
     filtroGasolina: 15,
     litroAceite: 18
 });
 
-var estrategia6Cilindros = afinacion6Factory({
+var afinacion6cil = afinacion6Factory({
     bujia: 12,
     filtroAire: 30,
     filtroGasolina: 45,
     litroAceite: 18
 });
 
-var estrategia8Cilindros = afinacion8Factory({
+var afinacion8cil = afinacion8Factory({
     bujia: 15,
     filtroAire: 60,
     filtroGasolina: 75,
@@ -27,9 +27,9 @@ var estrategia8Cilindros = afinacion8Factory({
 });
 
 
-var paquete4 = tallerDeAbraham.construir(estrategia4Cilindros);
-var paquete6 = tallerDeAbraham.construir(estrategia6Cilindros);
-var paquete8 = tallerDeAbraham.construir(estrategia8Cilindros);
+var paquete4 = tallerDeAbraham.construir(afinacion4cil);
+var paquete6 = tallerDeAbraham.construir(afinacion6cil);
+var paquete8 = tallerDeAbraham.construir(afinacion8cil);
 
 
 console.log('El paquete de 4 bujías cuesta: ' + paquete4.obtenerPresupuesto());
