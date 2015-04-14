@@ -32,6 +32,6 @@ var paquete6 = tallerDeAbraham.construir(afinacion6cil);
 var paquete8 = tallerDeAbraham.construir(afinacion8cil);
 
 
-console.log('El paquete de 4 bujías cuesta: ' + paquete4.obtenerPresupuesto());
-console.log('El paquete de 6 bujías cuesta: ' + paquete6.obtenerPresupuesto());
-console.log('El paquete de 8 bujías cuesta: ' + paquete8.obtenerPresupuesto());
+console.log('Afinación para autos de 4 cilindors cuesta: ' + paquete4.obtenerPresupuesto());
+console.log('Afinación para autos de 6 cilindors cuesta: ' + paquete6.obtenerPresupuesto());
+console.log('Afinación para autos de 8 cilindors cuesta: ' + paquete8.obtenerPresupuesto());
