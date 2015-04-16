@@ -1,0 +1,4 @@
+-imprimir(icalificable)
+-imprimirSeparador
+
+imprimir
