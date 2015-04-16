@@ -1,4 +1,0 @@
-materias[]
-obtenerPromedio()
-titulo
-semestres[]
