@@ -42,3 +42,4 @@ function execute(menu, name) {
 execute(menu, 'cut');
 execute(file, 'open');
 execute(edit.submenus[2], 'paste');
+
