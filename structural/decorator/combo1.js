@@ -11,11 +11,7 @@ var Combo1 = (function() {
         that.comboBase.papas.gramos += 50;
         that.comboBase.refresco.mililitros += 100;
         
-        return {
-            hamburguesa: that.comboBase.hamburguesa,
-            papas: that.comboBase.papas,
-            refresco: that.comboBase.refresco
-        };
+        return that.comboBase.preparar();
     }
 
     return Combo1;
